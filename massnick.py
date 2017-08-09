@@ -3,6 +3,15 @@ from discord.ext import commands
 from cogs.utils.checks import *
 
 class massnick:
+    """Mass nickname change/revert/reset"""
+    version = 1
+    name = "Mass Nickname Changer"
+    author = "Bluscream#2597"
+    authorid = 97138137679028224
+    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/massnick.py"
+    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/massnick.py"
+    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
+    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/massnick.py"
 
     def __init__(self, bot):
         self.bot = bot

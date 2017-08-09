@@ -4,6 +4,16 @@ from cogs.utils.checks import *
 from datetime import datetime, timedelta
 
 class tatsumaki:
+    """Tatsumaki bot auto captcha solving + giveaway and check commands."""
+    version = 1
+    name = "Tatsumaki"
+    author = "Bluscream#2597"
+    authorid = 97138137679028224
+    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/tatsumaki.py"
+    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/tatsumaki.py"
+    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
+    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/tatsumaki.py"
+
     active = True
     text = ['To confirm, type `' , '➡  |  Tippe `']
     balancetext = ['balance of', '**, **dein Guthaben beträgt 💴 ']
@@ -23,7 +33,7 @@ class tatsumaki:
             if any(s in message.content.lower() for s in self.cmds):
                 print('Allowing auto-transaction via Tatsumaki in channel #'+message.channel.name+' on server "'+message.channel.guild.name+'"')
                 self.allowed = True
-                # await self.bot.delete_message(message)
+                # await message.delete()
         elif message.author.id == self.tatsu and self.allowed:
             if not any(x in message.content for x in self.text): return
             captcha = re.findall("`(\d+)`", message.content)[0]

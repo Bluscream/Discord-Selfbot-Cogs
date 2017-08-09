@@ -6,10 +6,17 @@ import asyncio
 from random import randint
 from discord.ext import commands
 
-'''Module to react automatically to @everyone pings.'''
-
-
 class EveryoneReact:
+    """Module to react automatically to @everyone pings."""
+    version = 1
+    name = "EveryoneReact"
+    author = "appu1232#2569"
+    authorid = 124910128582361092
+    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/everyone_react.py"
+    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/everyone_react.py"
+    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
+    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/everyone_react.py"
+
     def __init__(self, bot):
         self.bot = bot
         if not os.path.exists('cogs/utils/everyone_react.json'):

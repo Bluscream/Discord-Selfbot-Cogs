@@ -3,6 +3,16 @@ from discord.ext import commands
 from cogs.utils.checks import *
 
 class DMProtect:
+    """Protects you against DM invite spammers"""
+    version = 1
+    name = "DM Protection"
+    author = "Bluscream#2597"
+    authorid = 97138137679028224
+    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/dmprotect.py"
+    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/dmprotect.py"
+    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
+    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/dmprotect.py"
+
     def __init__(self, bot):
         self.active = True
         self.allowed = False

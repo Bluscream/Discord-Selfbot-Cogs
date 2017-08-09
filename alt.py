@@ -4,7 +4,16 @@ from cogs.utils.checks import *
 
 class alt:
     """Let's others use u to check their online- and playing status in DM's"""
-    active = False
+    version = 1
+    name = "ALT Tester"
+    author = "Bluscream#2597"
+    authorid = 97138137679028224
+    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/alt.py"
+    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/alt.py"
+    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
+    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/alt.py"
+
+    active = True
     def __init__(self, bot):
         self.bot = bot
 

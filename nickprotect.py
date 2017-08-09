@@ -3,6 +3,15 @@ from discord.ext import commands
 from cogs.utils.checks import *
 
 class nickprotect:
+    """Protect your nickname from admin abuse"""
+    version = 1
+    name = "Nickname Protection"
+    author = "Bluscream#2597"
+    authorid = 97138137679028224
+    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/nickprotect.py"
+    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/nickprotect.py"
+    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
+    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/nickprotect.py"
 
     def __init__(self, bot):
         self.bot = bot

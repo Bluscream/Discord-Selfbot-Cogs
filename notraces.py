@@ -3,6 +3,15 @@ from discord.ext import commands
 from cogs.utils.checks import *
 
 class notraces:
+    """Auto delete your messages `n` seconds after you sent them."""
+    version = 1
+    name = "No Traces"
+    author = "Bluscream#2597"
+    authorid = 97138137679028224
+    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/notraces.py"
+    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/notraces.py"
+    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
+    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/notraces.py"
 
     def __init__(self, bot):
         self.bot = bot

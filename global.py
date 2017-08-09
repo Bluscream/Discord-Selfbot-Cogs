@@ -7,14 +7,20 @@ from cogs.utils.api import *
 
 class UserInteractionRequiredException(Exception): pass
 
-# noinspection PyStatementEffect,PyUnreachableCode
-class globalban:
+class mass:
+    """Allows you to do global actions"""
+    version = 1
+    name = "Global actions"
+    author = "Bluscream#2597"
+    authorid = 97138137679028224
+    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/global.py"
+    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/global.py"
+    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
+    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/global.py"
 
     def __init__(self, bot):
         self.bot = bot
-        # raise UserInteractionRequiredException('\nATTENTION: This cog may contain bugs and is only intended to be used by advanced users.\nRemove line 13 from cogs/globalban.py to use this cog!')
-
-
+        raise UserInteractionRequiredException('\nATTENTION: This cog may contain bugs and is only intended to be used by advanced users.\nRemove line 15 from cogs/globalban.py to use this cog!')
 
 
     @commands.command(aliases=['pro'], pass_context=True)
@@ -51,9 +57,10 @@ class globalban:
     async def block(self, ctx, *, user):
         """Blocks the user you provide."""
         try:
-            member = get_user(user,ctx.message)
+            member = await get_user(user,ctx.message,self.bot)
             block_user(str(member.id))
-            await success(ctx.message)
+            try: await success(ctx.message)
+            except: pass
             await asyncio.sleep(5)
             await ctx.message.delete()
         except:
@@ -63,9 +70,10 @@ class globalban:
     async def unblock(self, ctx, *, user):
         """Unblocks the user you provide."""
         try:
-            member = get_user(user,ctx.message)
+            member = await get_user(user,ctx.message,self.bot)
             unblock_user(str(member.id))
-            await success(ctx.message)
+            try: await success(ctx.message)
+            except: pass
             await asyncio.sleep(5)
             await ctx.message.delete()
         except:
@@ -81,9 +89,6 @@ class globalban:
         """
         Bans the given user ids from all guilds you have permissions to and blocks him.
         Example: >global ban 344212162329444362 344222162221006868 344223165062578181|Test Reason
-        :param ctx:
-        :param users:
-        :return:
         """
         reason = None
         if "|" in users:
@@ -124,9 +129,6 @@ class globalban:
         """
         Unbans the given user from all guilds you have permissions to and unblocks him.
         Example: >global unban 344212162329444362 344222162221006868 344223165062578181
-        :param ctx:
-        :param users:
-        :return:
         """
         users = users.split(' ')
         try: await ctx.message.add_reaction('⌛')
@@ -154,4 +156,4 @@ class globalban:
         except: pass
 
 def setup(bot):
-    bot.add_cog(globalban(bot))
+    bot.add_cog(mass(bot))
