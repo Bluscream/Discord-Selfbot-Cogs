@@ -2,7 +2,7 @@ import discord, asyncio
 from discord.ext import commands
 from cogs.utils.checks import *
 
-class massnick:
+class MassNick:
     """Mass nickname change/revert/reset"""
     version = 1
     name = "Mass Nickname Changer"
@@ -69,4 +69,4 @@ class massnick:
             except discord.Forbidden: print("Unable to reset {n}'s nick.".format(n=member.name))
 
 def setup(bot):
-    bot.add_cog(massnick(bot))
+    bot.add_cog(MassNick(bot))
