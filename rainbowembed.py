@@ -6,13 +6,12 @@ from discord.ext import commands
 class RainbowEmbed:
     """Makes one of your embeds **very** colorful."""
     version = 1
-    name = "RainbowEmbed"
-    author = "Bluscream#2597"
-    authorid = 97138137679028224
-    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/rainbowembed.py"
-    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/rainbowembed.py"
-    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
-    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/rainbowembed.py"
+    class author(discord.ClientUser):
+        name = "Bluscream"
+        discriminator = "2597"
+        id = 97138137679028224
+        email = "admin@timo.de.vc"
+    url = "https://raw.githubusercontent.com/LyricLy/ASCII/master/cogs/rainbowembed.json"
 
     message = None
     content = None

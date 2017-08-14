@@ -2,16 +2,15 @@ import discord, asyncio, datetime
 from discord.ext import commands
 from cogs.utils.checks import *
 
-class alt:
+class AltTester:
     """Let's others use u to check their online- and playing status in DM's"""
     version = 1
-    name = "ALT Tester"
-    author = "Bluscream#2597"
-    authorid = 97138137679028224
-    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/alt.py"
-    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/alt.py"
-    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
-    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/alt.py"
+    def author(self):
+        name = "Bluscream"
+        discriminator = "2597"
+        id = 97138137679028224
+        email = "admin@timo.de.vc"
+    url = "https://raw.githubusercontent.com/LyricLy/ASCII/master/cogs/alt.json"
 
     active = True
     def __init__(self, bot):
@@ -38,4 +37,4 @@ class alt:
         await ctx.message.channel.send( self.bot.bot_prefix + 'ALT Tester set to: `%s`' % self.active)
 
 def setup(bot):
-    bot.add_cog(alt(bot))
+    bot.add_cog(AltTester(bot))

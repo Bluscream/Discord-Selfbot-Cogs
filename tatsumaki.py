@@ -3,16 +3,15 @@ from discord.ext import commands
 from cogs.utils.checks import *
 from datetime import datetime, timedelta
 
-class tatsumaki:
+class Tatsumaki:
     """Tatsumaki bot auto captcha solving + giveaway and check commands."""
     version = 1
-    name = "Tatsumaki"
-    author = "Bluscream#2597"
-    authorid = 97138137679028224
-    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/tatsumaki.py"
-    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/tatsumaki.py"
-    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
-    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/tatsumaki.py"
+    class author(discord.ClientUser):
+        name = "Bluscream"
+        discriminator = "2597"
+        id = 97138137679028224
+        email = "admin@timo.de.vc"
+    url = "https://raw.githubusercontent.com/LyricLy/ASCII/master/cogs/tatsumaki.json"
 
     active = True
     text = ['To confirm, type `' , '➡  |  Tippe `']
@@ -156,4 +155,4 @@ class tatsumaki:
             self.member = random_member
 
 def setup(bot):
-    bot.add_cog(tatsumaki(bot))
+    bot.add_cog(Tatsumaki(bot))

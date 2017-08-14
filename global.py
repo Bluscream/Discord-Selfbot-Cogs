@@ -10,17 +10,16 @@ class UserInteractionRequiredException(Exception): pass
 class mass:
     """Allows you to do global actions"""
     version = 1
-    name = "Global actions"
-    author = "Bluscream#2597"
-    authorid = 97138137679028224
-    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/global.py"
-    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/global.py"
-    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
-    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/global.py"
+    class author(discord.ClientUser):
+        name = "Bluscream"
+        discriminator = "2597"
+        id = 97138137679028224
+        email = "admin@timo.de.vc"
+    url = "https://raw.githubusercontent.com/LyricLy/ASCII/master/cogs/global.json"
 
     def __init__(self, bot):
         self.bot = bot
-        raise UserInteractionRequiredException('\nATTENTION: This cog may contain bugs and is only intended to be used by advanced users.\nRemove line 15 from cogs/globalban.py to use this cog!')
+        # raise UserInteractionRequiredException('\nATTENTION: This cog may contain bugs and is only intended to be used by advanced users.\nRemove line 15 from cogs/globalban.py to use this cog!')
 
 
     @commands.command(aliases=['pro'], pass_context=True)
@@ -29,7 +28,7 @@ class mass:
         try:
             member = await self.bot.get_user_profile(user)
             if not member: return await ctx.send("User \"%s\" not found."%user)
-            _msg = "%s#%s (%s)" % (member.user.name, member.user.discriminator, member.user.id)
+            _msg = "%s#%s" % (member.user.name, member.user.discriminator)
             _msg += "\nNitro: %s" % member.nitro
             if member.premium: _msg += " (Since %s)"% member.premium_since
             _msg += "\nHypeSquad: %s" % member.hypesquad
@@ -53,6 +52,7 @@ class mass:
         except:
             from traceback import format_exc;await ctx.send(self.bot.bot_prefix + " Error:\n\n%s" % format_exc())
 
+    '''
     @commands.command(aliases=['bl'], pass_context=True)
     async def block(self, ctx, *, user):
         """Blocks the user you provide."""
@@ -78,6 +78,7 @@ class mass:
             await ctx.message.delete()
         except:
             from traceback import format_exc;await ctx.send(self.bot.bot_prefix + " Error:\n\n%s" % format_exc())
+    '''
 
     @commands.group(aliases=['global'], pass_context=True)
     async def mass(self, ctx):

@@ -2,16 +2,15 @@ import discord, asyncio
 from discord.ext import commands
 from cogs.utils.checks import *
 
-class notraces:
+class NoTraces:
     """Auto delete your messages `n` seconds after you sent them."""
     version = 1
-    name = "No Traces"
-    author = "Bluscream#2597"
-    authorid = 97138137679028224
-    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/notraces.py"
-    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/notraces.py"
-    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
-    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/notraces.py"
+    class author(discord.ClientUser):
+        name = "Bluscream"
+        discriminator = "2597"
+        id = 97138137679028224
+        email = "admin@timo.de.vc"
+    url = "https://raw.githubusercontent.com/LyricLy/ASCII/master/cogs/notraces.json"
 
     def __init__(self, bot):
         self.bot = bot
@@ -38,4 +37,4 @@ class notraces:
             await message.delete()
 
 def setup(bot):
-    bot.add_cog(notraces(bot))
+    bot.add_cog(NoTraces(bot))

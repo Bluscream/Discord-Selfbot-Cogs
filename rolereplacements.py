@@ -5,12 +5,12 @@ class RoleReplacements:
     """Manage role replacements within messages."""
     version = 1
     name = "RoleReplacements"
-    author = "Bluscream#2597"
-    authorid = 97138137679028224
-    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/rolereplacements.py"
-    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/rolereplacements.py"
-    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
-    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/rolereplacements.py"
+    class author(discord.ClientUser):
+        name = "Bluscream"
+        discriminator = "2597"
+        id = 97138137679028224
+        email = "admin@timo.de.vc"
+    url = "https://raw.githubusercontent.com/LyricLy/ASCII/master/cogs/rolereplacements.json"
     active = True
     def __init__(self, bot):
         self.bot = bot

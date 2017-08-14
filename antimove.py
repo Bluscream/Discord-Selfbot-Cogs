@@ -2,16 +2,15 @@ import discord, asyncio
 from discord.ext import commands
 from cogs.utils.checks import *
 
-class antimove:
+class AntiMove:
     """Sticks you to the voice channel you're currently in"""
     version = 1
-    name = "AntiMove"
-    author = "Bluscream#2597"
-    authorid = 97138137679028224
-    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/antimove.py"
-    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/antimove.py"
-    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
-    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/antimove.py"
+    class author(discord.ClientUser):
+        name = "Bluscream"
+        discriminator = "2597"
+        id = 97138137679028224
+        email = "admin@timo.de.vc"
+    url = "https://raw.githubusercontent.com/LyricLy/ASCII/master/cogs/antimove.json"
 
     def __init__(self, bot):
         self.bot = bot
@@ -39,4 +38,4 @@ class antimove:
         await ctx.message.channel.send(self.bot.bot_prefix + 'Antimove set to: `%s`' % self.active)
 
 def setup(bot):
-    bot.add_cog(antimove(bot))
+    bot.add_cog(AntiMove(bot))

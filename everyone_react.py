@@ -9,13 +9,11 @@ from discord.ext import commands
 class EveryoneReact:
     """Module to react automatically to @everyone pings."""
     version = 1
-    name = "EveryoneReact"
-    author = "appu1232#2569"
-    authorid = 124910128582361092
-    link = "https://raw.githubusercontent.com/Bluscream/Discord-Selfbot-Cogs/master/everyone_react.py"
-    source = "https://github.com/Bluscream/Discord-Selfbot-Cogs/blob/master/everyone_react.py"
-    support = "https://github.com/Bluscream/Discord-Selfbot-Cogs/issues/new"
-    changelog = "https://github.com/Bluscream/Discord-Selfbot-Cogs/commits/master/everyone_react.py"
+    class author(discord.ClientUser):
+        name = "appu1232"
+        discriminator = "2569"
+        id = 124910128582361092
+    url = "https://raw.githubusercontent.com/Bluscream/ASCII/master/cogs/everyone_react.json"
 
     def __init__(self, bot):
         self.bot = bot
@@ -166,6 +164,7 @@ class EveryoneReact:
     async def on_message(self, message):
         """React to @everyone pings if enabled."""
         if message.mention_everyone and self.active is True:
+            if not message.guild.me.permissions_in(message.channel).add_reactions: return
             msg = self.word.lower()
 
             reactions = []
