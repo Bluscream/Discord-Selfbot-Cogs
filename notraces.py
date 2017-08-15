@@ -9,7 +9,7 @@ class NoTraces:
         name = "Bluscream"
         discriminator = "2597"
         id = 97138137679028224
-        email = "admin@timo.de.vc"
+        email = "bluscreamlp@gmail.com"
     url = "https://raw.githubusercontent.com/LyricLy/ASCII/master/cogs/notraces.json"
 
     def __init__(self, bot):
