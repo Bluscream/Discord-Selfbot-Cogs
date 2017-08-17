@@ -2,14 +2,17 @@ import discord, asyncio, datetime
 from discord.ext import commands
 from cogs.utils.checks import *
 
+
+def author():
+    name = "Bluscream"
+    discriminator = "2597"
+    id = 97138137679028224
+    email = "bluscreamlp@gmail.com"
+
+
 class AltTester:
     """Let's others use u to check their online- and playing status in DM's"""
     version = 1
-    def author(self):
-        name = "Bluscream"
-        discriminator = "2597"
-        id = 97138137679028224
-        email = "bluscreamlp@gmail.com"
     url = "https://raw.githubusercontent.com/LyricLy/ASCII/master/cogs/alt.json"
 
     active = True
