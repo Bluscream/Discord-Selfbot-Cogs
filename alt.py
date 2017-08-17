@@ -30,7 +30,7 @@ class AltTester:
             if member.game: await message.channel.send(self.bot.bot_prefix + 'You are currently %s: `%s`' % ( "streaming" if member.game.url else "playing", member.game.name+"="+member.game.url if member.game.url else member.game))
             else: await message.channel.send(self.bot.bot_prefix + 'You are currently not playing or streaming anything.')
 
-    @commands.command(aliases=['alt'], pass_context=True)
+    @commands.command(aliases=['alt'])
     async def alttest(self, ctx):
         """Toggles ALT Tester."""
         self.active = not self.active

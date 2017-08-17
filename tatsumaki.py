@@ -92,7 +92,7 @@ class Tatsumaki:
         repdelta = timedelta(hours=reptime.hour, minutes=reptime.minute, seconds=reptime.second)
         return [repstring, reptime, repdelta, curtime+repdelta]
 
-    @commands.group(name='tatsumaki', aliases=['tatsu', 't'], pass_context=True)
+    @commands.group(name='tatsumaki', aliases=['tatsu', 't'])
     async def _tatsumaki(self, ctx):
         """Toggles Tatsumaki auto captcha solving."""
         if ctx.invoked_subcommand is not None: return
@@ -100,7 +100,7 @@ class Tatsumaki:
         self.active = not self.active
         await ctx.message.channel.send(self.bot.bot_prefix + 'Tatsumaki set to: `%s`' % self.active)
 
-    @_tatsumaki.command(name='check', pass_context=True)
+    @_tatsumaki.command(name='check')
     async def _check(self, ctx, type: str = 'all'):
         """Checks your current credits, guild points and time to next rep"""
         await ctx.message.delete()
@@ -116,7 +116,7 @@ class Tatsumaki:
             if rep: msg += 'Next rep available in: **{}**\nNext Rep available at: **{}'.format(rep[0], rep[3]).partition('.')[0].rstrip()+'**'
         await ctx.message.channel.send(content=msg)
 
-    @_tatsumaki.command(name='giveaway', pass_context=True)
+    @_tatsumaki.command(name='giveaway')
     async def _giveaway(self, ctx, type: str = 'default'):
         """Gives away all your guildpoints, credits and/or rep to randoms on the current guild"""
         await ctx.message.delete()

@@ -23,7 +23,7 @@ class RainbowEmbed:
             await self.message.edit(content=None, embed=discord.Embed(description=self.content, color=discord.Colour.from_rgb(r=randint(0, 255), g=randint(0, 255), b=randint(0, 255))))
             await asyncio.sleep(1)
 
-    @commands.command(aliases=['rbembed', 'rb'], pass_context=True)
+    @commands.command(aliases=['rbembed', 'rb'])
     async def rainbowembed(self, ctx, msg_id: int = 0):
         await ctx.message.delete()
         if not self.message:

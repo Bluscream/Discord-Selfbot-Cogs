@@ -30,7 +30,7 @@ class MassNick:
         except discord.Forbidden: print("Insufficient permissions to force \"{n}\" to keep his nickname on guild \"{s}\"".format(n=before.nick,s=before.guild.name))
     """
 
-    @commands.command(aliases=['mn'], pass_context=True)
+    @commands.command(aliases=['mn'])
     async def massnick(self, ctx, onlineonly: bool = False, *, newnick = None):
         """Changes the nickname of all users of the current guild to [newnick]
         Use it a second time to revert all nicknames with a 1 second delay"""
@@ -60,7 +60,7 @@ class MassNick:
                     print("Reset {n}'s nick to {o}".format(n=self.guild.get_member(id).name,o=oldnick))
                 except discord.Forbidden: print("Unable to reset {n}'s nick to {o}".format(n=self.guild.get_member(id).name,o=oldnick))
 
-    @commands.command(aliases=['rn'], pass_context=True)
+    @commands.command(aliases=['rn'])
     async def resetnicks(self, ctx, *, nick = None):
         """Removes all nicknames on the current guild."""
         for member in ctx.message.guild.members:

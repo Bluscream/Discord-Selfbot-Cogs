@@ -30,7 +30,7 @@ class AntiMove:
             print("Insufficient permissions to move yourself back to \"{n}\" on guild \"{s}\"".format(n=before.channel,s=member.guild.name))
             self.allowed = False
 
-    @commands.command(aliases=['am'], pass_context=True)
+    @commands.command(aliases=['am'])
     async def antimove(self, ctx):
         """Toggles Voice Antimove so you stay in the channel you choose."""
         await ctx.message.delete()

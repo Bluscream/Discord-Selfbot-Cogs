@@ -16,14 +16,14 @@ class JokeGenerator:
         self.bot = bot
 
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def joke(self, ctx):
         """Returns a random Joke from https://tambalapi.herokuapp.com via https://github.com/KiaFathi/tambalAPI"""
         response = json.loads(requests.get("https://tambalapi.herokuapp.com").text)
         await ctx.message.edit(content=":rofl: {}".format(response[0]["joke"]))
 
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def chuck(self, ctx):
         """Returns a random Chuck Norris joke from http://www.icndb.com/api/"""
         response = requests.get("http://api.icndb.com/jokes/random").text

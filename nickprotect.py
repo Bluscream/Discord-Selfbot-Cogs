@@ -31,7 +31,7 @@ class NickProtect:
             # await self.bot.delete_message(msg)
         else: return print("Insufficient permissions to protect own nickname \"{n}\" on guild \"{s}\"".format(n=before.nick,s=before.guild.name))
 
-    @commands.command(aliases=['np'], pass_context=True)
+    @commands.command(aliases=['np'])
     async def nickprotect(self, ctx):
         """Toggles nickprotect mode so you keep your nick when you have enough permissions."""
         await ctx.message.delete()

@@ -22,7 +22,7 @@ class mass:
         # raise UserInteractionRequiredException('\nATTENTION: This cog may contain bugs and is only intended to be used by advanced users.\nRemove line 15 from cogs/globalban.py to use this cog!')
 
 
-    @commands.command(aliases=['pro'], pass_context=True)
+    @commands.command(aliases=['pro'])
     async def profile(self, ctx, *, user: int):
         """Debug command. Shows profile information for the selected user."""
         try:
@@ -39,7 +39,7 @@ class mass:
             from traceback import format_exc;await ctx.send(self.bot.bot_prefix + " Error:\n\n%s" % format_exc())
 
 
-    @commands.command(aliases=['fu'], pass_context=True)
+    @commands.command(aliases=['fu'])
     async def finduser(self, ctx, *, user):
         """Debug command. Checks if we could find the user you're searching for."""
         try:
@@ -53,7 +53,7 @@ class mass:
             from traceback import format_exc;await ctx.send(self.bot.bot_prefix + " Error:\n\n%s" % format_exc())
 
     '''
-    @commands.command(aliases=['bl'], pass_context=True)
+    @commands.command(aliases=['bl'])
     async def block(self, ctx, *, user):
         """Blocks the user you provide."""
         try:
@@ -66,7 +66,7 @@ class mass:
         except:
             from traceback import format_exc;await ctx.send(self.bot.bot_prefix + " Error:\n\n%s" % format_exc())
 
-    @commands.command(aliases=['ubl'], pass_context=True)
+    @commands.command(aliases=['ubl'])
     async def unblock(self, ctx, *, user):
         """Unblocks the user you provide."""
         try:
@@ -80,12 +80,12 @@ class mass:
             from traceback import format_exc;await ctx.send(self.bot.bot_prefix + " Error:\n\n%s" % format_exc())
     '''
 
-    @commands.group(aliases=['global'], pass_context=True)
+    @commands.group(aliases=['global'])
     async def mass(self, ctx):
         """Allows several actions to be applied on multiple guilds."""
         pass
 
-    @mass.command(pass_context=True)
+    @mass.command()
     async def ban(self, ctx, *, users: str):
         """
         Bans the given user ids from all guilds you have permissions to and blocks him.
@@ -125,7 +125,7 @@ class mass:
         try: await ctx.message.remove_reaction('⌛', ctx.guild.me)
         except: pass
 
-    @mass.command(pass_context=True)
+    @mass.command()
     async def unban(self, ctx, *, users):
         """
         Unbans the given user from all guilds you have permissions to and unblocks him.

@@ -15,7 +15,7 @@ class RoleReplacements:
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def rolereplace(self, ctx):
         await ctx.message.delete()
 

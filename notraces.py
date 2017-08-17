@@ -17,7 +17,7 @@ class NoTraces:
         self.active = False
         self.delete_after = 30
 
-    @commands.command(aliases=['nt'], pass_context=True)
+    @commands.command(aliases=['nt'])
     async def notrace(self, ctx):
         """Toggles notraces mode which autodeletes **all** your messages after [seconds_tod_elete] have passed."""
         await ctx.message.delete()

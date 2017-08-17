@@ -52,7 +52,7 @@ class DMProtect:
                             _msg += "/reported"
                 return print('Automatically {} user {} for sending an invite link ({}) in their first private message to you.'.format(_msg, message.author, invite))
 
-    @commands.command(aliases=['dmp'], pass_context=True)
+    @commands.command(aliases=['dmp'])
     async def dmprotect(self, ctx):
         """Toggles DM Invite Protection."""
         await ctx.message.delete()

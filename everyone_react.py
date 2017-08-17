@@ -142,7 +142,7 @@ class EveryoneReact:
                     react_me = react_me.replace(char, EveryoneReact.emoji_dict[char][0])
         return react_me
 
-    @commands.group(pass_context=True)
+    @commands.group()
     async def everyonereact(self, ctx):
         """Toggles everyone react mode. >help everyonereact for more...
 
@@ -153,7 +153,7 @@ class EveryoneReact:
                 json.dump({self.word: self.active}, fp, indent=4)
             await ctx.message.channel.send(self.bot.bot_prefix + 'Everyone react set to: `%s`' % self.active)
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def reactword(self, ctx, *, txt: str):
         """Set text to react with for everyone react. >help everyonereact for more..."""
         self.word = txt
