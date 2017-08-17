@@ -64,7 +64,7 @@ class MassNick:
     async def resetnicks(self, ctx, *, nick = None):
         """Removes all nicknames on the current guild."""
         for member in ctx.message.guild.members:
-            if nick != None and member.nick != nick: continue
+            if nick is not None and member.nick != nick: continue
             try: await member.edit(nick=None)
             except discord.Forbidden: print("Unable to reset {n}'s nick.".format(n=member.name))
 
